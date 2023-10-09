@@ -1,7 +1,6 @@
 const express = require("express");
 const session = require('express-session');
 const cors = require("cors");
-const morgan = require("morgan");
 const cookieParser = require('cookie-parser');
 const { config, swaggerSpec } = require('./config')
 const swaggerUI = require('swagger-ui-express');
@@ -41,7 +40,6 @@ const sessionConfig = {
 app.use(session(sessionConfig));
 
 // Middlewares de registro y CORS
-app.use(morgan("dev"))
 
 // Middleware de rutas
 app.use(snkrsRoutes);
